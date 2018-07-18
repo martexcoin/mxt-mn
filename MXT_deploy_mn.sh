@@ -24,7 +24,7 @@ fi
 
 echo "Running on Ubuntu $uris with $meis MB Ram and $swis MB swap"
 echo "Updating the VM and installing dependencies"
-apt update && apt -y upgrade && apt -y install build-essential libtool autotools-dev autoconf automake pkg-config libssl-dev libevent-dev libboost-all-dev libminiupnpc-dev libgmp-dev libcurl4-openssl-dev libdb-dev libdb++-dev git fail2ban zip
+apt update && apt -y upgrade && apt -y install build-essential libtool autotools-dev autoconf automake pkg-config libssl-dev libevent-dev libboost-all-dev libminiupnpc-dev libgmp-dev libcurl4-openssl-dev libdb-dev libdb++-dev git fail2ban zip unzip
 echo "Configuring fail2ban"
 echo -e "[DEFAULT]\nbantime  = 864000\nfindtime  = 600\nmaxretry = 3\ndestemail = root@localhost\nsender = root@localhost\n\naction = %(action_mwl)s\n" >> /etc/fail2ban/jail.local
 service fail2ban restart
@@ -47,7 +47,7 @@ echo "Building node config file"
 echo -e "masternode=1\nmasternodeaddr=$iiis:51315\nmasternodeprivkey=$mnpkey\nexternalip=$iiis\nlogtimestamps=1\ntxindex=1\nstake=0\nstaking=0\n" >> ~/.MXT/MarteX.conf
 
 echo "Downloading blockchain . . ."
-cd ~/.MXT/ && rm blockchain-latest.zip && wget martexcoin.org/releases/blockchain-latest.zip && unzip -o blockchain-latest.zip && cd
+cd ~/.MXT/ && wget martexcoin.org/releases/blockchain-latest.zip && unzip -o blockchain-latest.zip && cd
 
 sleep 10; MarteXd
 
