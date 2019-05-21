@@ -29,7 +29,9 @@ echo "Configuring fail2ban"
 echo -e "[DEFAULT]\nbantime  = 864000\nfindtime  = 600\nmaxretry = 3\ndestemail = root@localhost\nsender = root@localhost\n\naction = %(action_mwl)s\n" >> /etc/fail2ban/jail.local
 service fail2ban restart
 echo "Building MXT... may take extended time on a low memory VPS"
-cd /opt && rm -rf martexcoin && git clone https://github.com/martexcoin/martexcoin.git && cd martexcoin/src && chmod +x leveldb/build_detect_platform && chmod +x secp256k1/autogen.sh && make -f makefile.unix USE_UPNP=- && strip MarteXd && cp MarteXd /usr/local/bin && echo "Cleaning up" && make -f makefile.unix clean && cd && MarteXd
+cd /opt && rm -rf martexcoin && git clone https://github.com/martexcoin/martexcoin.git && cd martexcoin
+./autogen.sh && ./configure --disable-gui-tests --disable-tests && make && cd src && strip martexd martex-cli martex-tx && cp martexd martex-cli martex-tx /usr/local/bin
+echo "Cleaning up" && cd /opt/martexcoin && make clean && cd && martexd
 
 read -p "Please enter this MN Private Key and press [ENTER]:" yay
 if [[ -z "$yay" ]]; then
@@ -49,10 +51,10 @@ echo -e "masternode=1\nmasternodeaddr=$iiis:51315\nmasternodeprivkey=$mnpkey\nex
 echo "Downloading blockchain . . ."
 cd ~/.MXT/ && wget martexcoin.org/releases/blockchain-latest.zip && unzip -o blockchain-latest.zip && cd
 
-sleep 10; MarteXd
+sleep 10; martexd
 
-echo "Setting MarteXd to auto-run on reboot"
-echo -e "@reboot /usr/local/bin/MarteXd\n" >> /var/spool/cron/crontabs/$uris
+echo "Setting martexd to auto-run on reboot"
+echo -e "@reboot /usr/local/bin/martexd\n" >> /var/spool/cron/crontabs/$uris
 echo "Switching to node monitor mode. Press ctl-c to exit."
-watch MarteXd getinfo
-echo "Get MarteX!!\nReboot the VPS and access it again to confirm all is in order" 
+watch martexd getinfo
+echo "Get MarteX!!\nReboot the VPS and access it again to confirm all is in order"

@@ -5,7 +5,7 @@
  + "MNx" is an alias for your MN, you can name them what you want. we are using x to denote MN1, MN2, MN3.... as masternode aliases
 + Configuration files locations by default are: 
    * Linux: `~/.MXT/` 
-   * Windows: `%appdata%\MXt\` 
+   * Windows: `%appdata%\MXT\` 
    ![Image of Windows_Roamin_folder](/images/Roaming_Folder.png)
    * OSX: `~/Library/Application Support/MXT/`
 + Take note of the outputs of all commands you run in steps 1-3 as you will need them later
