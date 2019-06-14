@@ -56,5 +56,5 @@ sleep 10; martexd
 echo "Setting martexd to auto-run on reboot"
 echo -e "@reboot /usr/local/bin/martexd\n" >> /var/spool/cron/crontabs/$uris
 echo "Switching to node monitor mode. Press ctl-c to exit."
-watch martexd getinfo
+watch martex-cli getinfo
 echo "Get MarteX!!\nReboot the VPS and access it again to confirm all is in order"
