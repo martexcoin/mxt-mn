@@ -14,5 +14,5 @@ cd /opt/martexcoin && git checkout . && git pull && ./autogen.sh && ./configure 
 echo "Cleaning up" && cd /opt/martexcoin && make clean && cd && martexd
 
 echo "Switching to node monitor mode. Press ctl-c to exit."
-watch martexd getinfo
+watch martex-cli getinfo
 echo "Get MarteX!!" 
