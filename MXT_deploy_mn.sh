@@ -29,9 +29,12 @@ echo "Configuring fail2ban"
 echo -e "[DEFAULT]\nbantime  = 864000\nfindtime  = 600\nmaxretry = 3\ndestemail = root@localhost\nsender = root@localhost\n\naction = %(action_mwl)s\n" >> /etc/fail2ban/jail.local
 service fail2ban restart
 echo "Building MXT... may take extended time on a low memory VPS"
-cd /opt && rm -rf martexcoin && git clone https://github.com/martexcoin/martexcoin.git && cd martexcoin
-./autogen.sh && ./configure --disable-gui-tests --disable-tests && make && cd src && strip martexd martex-cli martex-tx && cp martexd martex-cli martex-tx /usr/local/bin
-echo "Cleaning up" && cd /opt/martexcoin && make clean && cd && martexd
+
+mkdir /opt/martexcoin-v4.0.0
+cd /opt/martexcoin-v4.0.0
+wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.0.0/martexcore-4.0.0-x86_64-linux-gnu.tar.gz
+tar -zxvf martexcore-4.0.0-x86_64-linux-gnu.tar.gz
+cd martexcore-4.0.0/bin && cp * /usr/local/bin/ && cd
 
 read -p "Please enter this MN Private Key and press [ENTER]:" yay
 if [[ -z "$yay" ]]; then
