@@ -12,4 +12,6 @@ Scripts &amp; Helpers
 
 ## [Update MarteXcoin Node/Masternode](Update.md)
 
+## After the masternode is working you must install and configure the [Sentinel](https://github.com/martexcoin/sentinel)
+
 ## To report issues or for support : <br> [MarteXcoin Telegram @martexcoin](https://t.me/martexcoin)
