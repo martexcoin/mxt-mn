@@ -14,4 +14,6 @@ Scripts &amp; Helpers
 
 ## After the masternode is working you must install and configure the [Sentinel](https://github.com/martexcoin/sentinel). If you do not install sentinel, the masternode and governance will not work correctly.
 
+### You are responsible for your masternode both in terms of maintenance and safety. We recommend monitoring your masternode at least once a day.
+
 ## To report issues or for support : <br> [MarteXcoin Telegram @martexcoin](https://t.me/martexcoin)
