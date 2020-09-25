@@ -11,11 +11,11 @@ echo "Updating the VM and applying OS patches"
 apt update && apt -y upgrade
 echo "Updating MXT"
 martex-cli stop && sleep 10
-mkdir /opt/martexcoin-v4.0.2.2
-cd /opt/martexcoin-v4.0.2.2
-wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.2.2/martexcore-4.0.2-x86_64-linux-gnu.tar.gz
-tar -zxvf martexcore-4.0.2-x86_64-linux-gnu.tar.gz
-cd martexcore-4.0.2/bin && cp * /usr/local/bin/
+mkdir /opt/martexcoin-v4.0.3.3
+cd /opt/martexcoin-v4.0.3.3
+wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.3.3/martexcore-4.0.3-x86_64-linux-gnu.tar.gz
+tar -zxvf martexcore-4.0.3-x86_64-linux-gnu.tar.gz
+cd martexcore-4.0.3/bin && cp * /usr/local/bin/
 echo "Cleaning up" && martexd
 echo "Switching to node monitor mode. Press ctl-c to exit."
 watch martex-cli getinfo
