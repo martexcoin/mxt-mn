@@ -16,4 +16,6 @@ Scripts &amp; Helpers
 
 ### You are responsible for your masternode both in terms of maintenance and safety. We recommend monitoring your masternode at least once a day.
 
+## To read more about Martexcore masternodes see [here](https://github.com/MarteXcoin-documentation/Documentation/tree/master/masternode).
+
 ## To report issues or for support : <br> [MarteXcoin Telegram @martexcoin](https://t.me/martexcoin)
