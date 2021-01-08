@@ -11,9 +11,9 @@ echo "Updating the VM and applying OS patches"
 apt update && apt -y upgrade
 echo "Updating MXT"
 martex-cli stop && sleep 10
-mkdir /opt/martexcoin-v4.0.4.1
-cd /opt/martexcoin-v4.0.4.1
-wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.4.1/martexcore-4.0.4-x86_64-linux-gnu.tar.gz
+mkdir /opt/martexcoin-v4.0.4.3
+cd /opt/martexcoin-v4.0.4.3
+wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.4.3/martexcore-4.0.4-x86_64-linux-gnu.tar.gz
 tar -zxvf martexcore-4.0.4-x86_64-linux-gnu.tar.gz
 cd martexcore-4.0.4/bin && cp * /usr/local/bin/
 echo "Cleaning up" && martexd
