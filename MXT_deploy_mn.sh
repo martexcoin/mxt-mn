@@ -30,11 +30,12 @@ echo -e "[DEFAULT]\nbantime  = 864000\nfindtime  = 600\nmaxretry = 3\ndestemail 
 service fail2ban restart
 echo "Building MXT... may take extended time on a low memory VPS"
 
-mkdir /opt/martexcoin-v4.0.4.3
-cd /opt/martexcoin-v4.0.4.3
-wget https://github.com/martexcoin/martexcoin/releases/download/v4.0.4.3/martexcore-4.0.4-x86_64-linux-gnu.tar.gz
-tar -zxvf martexcore-4.0.4-x86_64-linux-gnu.tar.gz
-cd martexcore-4.0.4/bin && cp * /usr/local/bin/ && cd
+mkdir /opt/martexcoin-v5.0.2.1
+cd /opt/martexcoin-v5.0.2.1
+
+wget https://github.com/martexcoin/martexcoin/releases/download/v5.0.2.1/martex-5.0.2.1-x86_64-linux-gnu.tar.gz
+tar -zxvf martex-5.0.2.1-x86_64-linux-gnu.tar.gz
+cd martex-5.0.2.1/bin && cp * /usr/local/bin/ && cd
 
 read -p "Please enter this MN Private Key and press [ENTER]:" yay
 if [[ -z "$yay" ]]; then
